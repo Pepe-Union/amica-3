@@ -41,12 +41,17 @@ class _AllUsersScreenState extends State<AllUsersScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
-        appBar: AppBar(
-          title: Text("All Users"),
+        appBar: AppBar(backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Icon(Icons.keyboard_backspace,color: Colors.redAccent,),
+            onPressed: () {},
+          ),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.close),
+              icon: Icon(Icons.close,color: Colors.redAccent,),
               onPressed: () async {
                 await firebaseAuth.signOut();
                 await googleSignIn.disconnect();
@@ -61,37 +66,52 @@ class _AllUsersScreenState extends State<AllUsersScreen> {
         ),
         body: usersList != null
             ? Container(
-                child: ListView.builder(
-                  itemCount: usersList.length,
-                  itemBuilder: ((context, index) {
-                    return ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage:
-                            NetworkImage(usersList[index].data['photoUrl']),
+              child: ListView.builder(
+                itemCount: usersList.length,
+                itemBuilder: ((context, index) {
+                  return Column(
+                    children: <Widget>[
+                      Text(
+                        "Text Inbox",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: height/22,
+                        ),
                       ),
-                      title: Text(usersList[index].data['name'],
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      subtitle: Text(usersList[index].data['emailId'],
-                          style: TextStyle(
-                            color: Colors.grey,
-                          )),
-                      onTap: (() {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => ChatScreen(
-                                    name: usersList[index].data['name'],
-                                    photoUrl: usersList[index].data['photoUrl'],
-                                    receiverUid:
-                                        usersList[index].data['uid'])));
-                      }),
-                    );
+                  ListTile(
+                  leading: CircleAvatar(
+                  backgroundImage:
+                  NetworkImage(usersList[index].data['photoUrl']),
+                  ),
+                  title: Text(usersList[index].data['name'],
+                  style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  )),
+                  subtitle: Text(usersList[index].data['emailId'],
+                  style: TextStyle(
+                  color: Colors.grey,
+                  )),
+                  onTap: (() {
+                  Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                  builder: (context) => ChatScreen(
+                  name: usersList[index].data['name'],
+                  photoUrl: usersList[index].data['photoUrl'],
+                  receiverUid:
+                  usersList[index].data['uid'])));
                   }),
-                ),
-              )
+                  ),
+                    ],
+                  );
+
+                }),
+              ),
+            )
             : Center(
                 child: CircularProgressIndicator(),
               ));

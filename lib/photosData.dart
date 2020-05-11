@@ -19,7 +19,7 @@ class MyHome extends StatefulWidget {
 class _MyHomeState extends State<MyHome> {
   int _currentIndex = 1;
   final List<Widget> _children = [
-    AllUsersScreen(),
+    MyApp(),
     MyHomePage(),
     VoiceUpload()
   ];
@@ -137,9 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
 
       appBar: AppBar(elevation: 0,
-        title: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.menu),
-          color: Colors.red,
+          color: Colors.redAccent,
           onPressed: () {},
         ),
         actions: <Widget>[
@@ -639,7 +639,7 @@ class _VoiceUploadState extends State<VoiceUpload> {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(elevation: 0,
-        title: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.keyboard_backspace),
           color: Colors.red,
           onPressed: () {},
