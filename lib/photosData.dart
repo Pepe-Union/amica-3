@@ -1,5 +1,8 @@
 //matching card
 import 'package:chat_app_example/ImagePicker.dart';
+import 'package:chat_app_example/chat/all_users_screen.dart';
+import 'package:chat_app_example/chat/home_page.dart';
+import 'package:chat_app_example/chat/startingChat.dart';
 import 'package:chat_app_example/inbox.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +17,11 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   final List<Widget> _children = [
-    Chat(),
+    AllUsersScreen(),
     MyHomePage(),
     VoiceUpload()
-
-
   ];
 
   @override

@@ -1,3 +1,4 @@
+import 'package:chat_app_example/chat/all_users_screen.dart';
 import 'package:chat_app_example/photosData.dart';
 
 import 'package:chat_app_example/res.dart';
@@ -20,10 +21,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Amica',
-      theme: ThemeData.light(),
-      home:   FacePage(),
+      theme: ThemeData(
+        primaryColor: Colors.redAccent
+      ),
+      home:  SplashScreen(),
       routes: {
-
         Registration.id: (context) => Registration(),
         Login.id: (context) => Login(),
         Chat.id: (context) => Chat(),

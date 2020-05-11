@@ -359,9 +359,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
 
+
   @override
 
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -370,106 +373,82 @@ class _LoginPageState extends State<LoginPage> {
           Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(40),
+                padding: EdgeInsets.all(height/18),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: height/15, horizontal: width/13),
                 child: Image.asset('assets/images/logo.png'),
               ),
               SizedBox(
-                height: 40,
+                height: height/30,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: height/18),
                 child: Text(
-                  "By tapping log in ,you agree with our teams of"
-                  " service and privacy policy.",
+                  "By signing up,you agree with our teams of\n"
+                      " service and privacy policy.",
                   textAlign: TextAlign.center,
                   style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 25),
-                child: Material(
-                  elevation: 0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(Login.id);
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40)),
-                    height: 55.0,
-                    minWidth: 320,
-                    child: Text(
-                      'Log in with email address',
-                      style: TextStyle(
-                          fontFamily: "Poppins",
-                          color: Colors.white,
-                          fontSize: 17),
-                    ),
-                    splashColor: Colors.red,
-                    color: Colors.redAccent,
+              SizedBox(height: height/28,),
+              Material(
+                elevation: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Login.id);
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40)),
+                  height: height/12,minWidth: width/1.3,
+                  child: Text(
+                    'Email address',
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        color: Colors.white,
+                        fontSize: height/32),
                   ),
+                  splashColor: Colors.red,
+                  color: Colors.redAccent,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 0),
-                child: Text('Or',
-                    style: TextStyle(
-                      fontFamily: "Poppins2",
-                      color: Colors.black,
-                    )),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 25),
-                child: Material(
-                  elevation: 0,
-                  child: MaterialButton(
-                    onPressed: () {
-                      //  Navigator.pushNamed(context, OtpScreen1.id);
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    height: 55.0,
-                    minWidth: 320,
-                    child: Text(
-                      'Log in with phone number',
-                      style: TextStyle(
-                          fontFamily: "Poppins",
-                          color: Colors.red,
-                          fontSize: 17),
-                    ),
-                    splashColor: Colors.white,
-                    color: Colors.white,
+              SizedBox(height: height/28,),
+              Material(
+                elevation: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    //Navigator.pushNamed(context, OtpScreen1.id);
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 0),
-                child: Text('Or',
+                  height: height/12,minWidth: width/1.3,
+                  child: Text(
+                    'Phone number',
                     style: TextStyle(
-                      fontFamily: "Poppins2",
-                      color: Colors.black,
-                    )),
+                        fontFamily: "Poppins",
+                        color: Colors.white,
+                        fontSize: height/32),
+                  ),
+                  splashColor: Colors.white,
+                  color: Colors.redAccent,
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    FloatingActionButton(
-                      backgroundColor: Colors.red,
-                      heroTag: "insta",
-                      child: Image.asset('assets/images/download.jpeg'),
+                    FloatingActionButton(elevation: 0,
+                      backgroundColor: Colors.red,heroTag: "insta",
+                      child: Image.asset('assets/images/ig.png'),
                       onPressed: () {},
-                    ),
-                    FloatingActionButton(
-                      heroTag: "facebook",
+                    ),SizedBox(width: width/40,),
+                    FloatingActionButton(heroTag: "facebook",elevation: 0,
                       backgroundColor: Colors.white,
                       child: Image.asset(
-                          'assets/images/facebook-hd-png-facebook-png-hd-png-image-2023.png'),
+                          'assets/images/fb.png'),
                       onPressed: () {
                         signUpWithFacebook().whenComplete(() {
                           Navigator.of(context).push(
@@ -483,36 +462,34 @@ class _LoginPageState extends State<LoginPage> {
                         )
                         ;
                       },
-                    ),
-                    FloatingActionButton(
-                      heroTag: "google",
+                    ),SizedBox(width: width/40,),
+                    FloatingActionButton(heroTag: "google",elevation: 0,
                       backgroundColor: Colors.white,
-                      child: Image.asset('assets/images/download.png'),
-                        onPressed: () {
-                          signInWithGoogle().whenComplete(() {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return Imformation();
-                                },
-                              ),
-                            );
-                          }
-                          )
-                          ;
-                        },
+                      child: Image.asset('assets/images/gg.png'),
+                      onPressed: () {
+                        signInWithGoogle().whenComplete(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Imformation();
+                              },
+                            ),
+                          );
+                        }
+                        )
+                        ;
+                      },
                     )
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                child: Text(
-                  "We don't post anything to any platform",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
-                ),
-              ),
+    padding: EdgeInsets.symmetric(vertical: height/50),
+    child: Text(
+    "We don't post anything to any platform",
+    textAlign: TextAlign.center,
+    style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
+    ),)
             ],
           )
         ],

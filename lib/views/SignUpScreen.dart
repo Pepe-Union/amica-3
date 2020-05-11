@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:chat_app_example/plugins_utils/database.dart';
+import 'package:chat_app_example/views/faceid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -334,7 +335,8 @@ class _GenderState extends State<Gender> {
               "Gender Details",
               textAlign: TextAlign.left,
               style: TextStyle(
-                letterSpacing: 2,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0,
                 fontFamily: 'Poppins',
                 fontSize: 30,
               ),
@@ -346,7 +348,7 @@ class _GenderState extends State<Gender> {
               "Your Gender",
               textAlign: TextAlign.left,
               style: TextStyle(
-                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.teal),
+                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
             ),
           ),
           Padding(padding: EdgeInsets.only(top:10),
@@ -354,7 +356,7 @@ class _GenderState extends State<Gender> {
               child: Container(
                 width: 375,
                 child: Card(
-                  color: Colors.red,
+                  color: Colors.redAccent,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   child: Center(
@@ -389,7 +391,7 @@ class _GenderState extends State<Gender> {
               "Intrested in",
               textAlign: TextAlign.left,
               style: TextStyle(
-                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.teal),
+                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
             ),
           ),
           Padding(padding: EdgeInsets.only(top:10),
@@ -397,7 +399,7 @@ class _GenderState extends State<Gender> {
               child: Container(
                 width: 375,
                 child: Card(
-                  color: Colors.red,
+                  color: Colors.redAccent,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   child: Center(
@@ -435,7 +437,7 @@ class _GenderState extends State<Gender> {
               elevation: 0,
               child: MaterialButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, ImageUpload.id);
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return FacePage();}), ModalRoute.withName('/'));
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40),
@@ -466,7 +468,12 @@ class _ImformationState extends State<Imformation> {
   String email;
   String name;
   String phone;
-  Color a=Colors.red;
+  String dob;
+  String city;
+  String state;
+  String country;
+
+  Color a=Colors.redAccent;
 
   String _longitute = "";
   String _latitute="";
@@ -476,6 +483,10 @@ class _ImformationState extends State<Imformation> {
     Map<String, String> data = <String, String>{
       "email": email,
       "name": name,
+      'dob': dob,
+      'city':city,
+      'state':state,
+      'country':country,
       'phone':phone,
       'long':_longitute,
       'lat':_latitute
@@ -500,72 +511,129 @@ class _ImformationState extends State<Imformation> {
 
   }
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
-        child:Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(
-                top: 40,
-              ),
-              child: Text(
-                "Information",
-                style: TextStyle(
-                  letterSpacing: 2,
-                  fontFamily: 'Poppins',
-                  fontSize: 30,
+        child:Padding(
+          padding: EdgeInsets.all(height/30),
+          child: Column(
+            children: <Widget>[
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "Profile details",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: height/25,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              child: Text(
-                "Email Address",
-                style: TextStyle(
-                    letterSpacing: 0,
-                    fontFamily: 'Poppins1',
-                    color: Colors.black),
+              SizedBox(height: height/30,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "Email Address",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
+              Theme(
+              data: new ThemeData(
+                primaryColor: Colors.redAccent,),
+                child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) => email = value,
                 decoration: InputDecoration(
                   hintText: 'abc@email.com',
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Material(
-                elevation: 0,
-                child: MaterialButton(
-                  onPressed: () {
-                    setState(() {
-                      a=Colors.blue;
-                      _getCurrentLocation();
-                    });
-                  },
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  height: 55.0,
-                  minWidth: 320,
-                  child: Text(
-                    'Location',
-                    style: TextStyle(
-                        fontFamily: "Poppins", color: Colors.white, fontSize: 20),
-                  ),
-                  splashColor: Colors.white,
-                  color: a,
+              ),),SizedBox(height: height/40,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "Full name",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Material(
+              Theme(
+                data: new ThemeData(
+                  primaryColor: Colors.redAccent,),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  onChanged: (value) => name = value,
+
+                ),),SizedBox(height: height/40,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "Birthday",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
+                ),
+              ),
+              Theme(
+                data: new ThemeData(
+                  primaryColor: Colors.redAccent,),
+                child: TextField(
+                  keyboardType: TextInputType.datetime,
+                  onChanged: (value) =>  dob= value,
+                  decoration: InputDecoration(
+                    hintText: 'dd/mm/yyyy',
+                  ),
+                ),),SizedBox(height: height/40,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "City",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
+                ),
+              ),
+              Theme(
+                data: new ThemeData(
+                  primaryColor: Colors.redAccent,),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  onChanged: (value) =>  city= value,
+
+                ),),SizedBox(height: height/40,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "State",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
+                ),
+              ),
+              Theme(
+                data: new ThemeData(
+                  primaryColor: Colors.redAccent,),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  onChanged: (value) => state = value,
+                ),),SizedBox(height: height/40,),
+              Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  "Country",
+                  style: TextStyle(
+                      letterSpacing: 0,
+                      fontFamily: 'Poppins1',
+                      color: Colors.grey[700]),
+                ),
+              ),
+              Theme(
+                data: new ThemeData(
+                  primaryColor: Colors.redAccent,),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  onChanged: (value) => country = value,
+                ),),SizedBox(height: height/40,),
+              Material(
                 elevation: 0,
                 child: MaterialButton(
                   onPressed: () {
@@ -586,11 +654,11 @@ class _ImformationState extends State<Imformation> {
                   color: Colors.redAccent,
                 ),
               ),
-            ),
 
 
 
-          ],
+            ],
+          ),
         ),
       ),
     );
