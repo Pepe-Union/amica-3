@@ -68,7 +68,7 @@ class _UploadState extends State<Upload> {
                     color: Colors.black),
               ),
             ),
-            SizedBox(height: height/60,),
+            SizedBox(height: height/40,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -76,7 +76,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(30),
                   child: _uploadedFileURL != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL,
@@ -84,7 +84,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -101,7 +101,7 @@ class _UploadState extends State<Upload> {
                     borderRadius: BorderRadius.circular(10),
                     child: _uploadedFileURL1 != null
                         ? Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,
                       child: Image.network(
                         _uploadedFileURL1,
@@ -109,7 +109,7 @@ class _UploadState extends State<Upload> {
                       ),
                     )
                         : Container(
-                        height: height/6,
+                        height: height/5,
                         width: width/3.6,color: Colors.grey[400],
                         child: IconButton(
                           icon: Icon(
@@ -123,7 +123,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL2 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL2,
@@ -131,7 +131,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -151,7 +151,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL3 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL3,
@@ -159,7 +159,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -176,7 +176,7 @@ class _UploadState extends State<Upload> {
                     borderRadius: BorderRadius.circular(10),
                     child: _uploadedFileURL4 != null
                         ? Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,
                       child: Image.network(
                         _uploadedFileURL4,
@@ -184,7 +184,7 @@ class _UploadState extends State<Upload> {
                       ),
                     )
                         : Container(
-                        height: height/6,
+                        height: height/5,
                         width: width/3.6,color: Colors.grey[400],
                         child: IconButton(
                           icon: Icon(
@@ -198,7 +198,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL5 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL5,
@@ -206,7 +206,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -226,7 +226,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL6 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL6,
@@ -234,7 +234,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -250,7 +250,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL7 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL7,
@@ -258,7 +258,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -273,7 +273,7 @@ class _UploadState extends State<Upload> {
                   borderRadius: BorderRadius.circular(10),
                   child: _uploadedFileURL8 != null
                       ? Container(
-                    height: height/6,
+                    height: height/5,
                     width: width/3.6,
                     child: Image.network(
                       _uploadedFileURL8,
@@ -281,7 +281,7 @@ class _UploadState extends State<Upload> {
                     ),
                   )
                       : Container(
-                      height: height/6,
+                      height: height/5,
                       width: width/3.6,color: Colors.grey[400],
                       child: IconButton(
                         icon: Icon(
@@ -299,7 +299,7 @@ class _UploadState extends State<Upload> {
                 elevation: 0,
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, MyHome.id);
+                    Navigator.pushNamed(context, MyHomePage.id);
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
