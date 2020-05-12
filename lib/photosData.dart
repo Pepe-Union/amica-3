@@ -153,126 +153,130 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Scaffold(
           backgroundColor: Colors.white,
-          body: Center(
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Padding(
-                  padding:EdgeInsets.only(left: width/12,right: width/12),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(height: height/15,width: width/6,
-                        child: Card(shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                          child: Image(
-                            image: AssetImage("assets/images/a1.jpeg"),
-                          ),
-                        ),
-                      ),
-                      Container(height: height/15,width: width/6,
-                        child: Card(shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                          child: Image(
-                            image: AssetImage("assets/images/a1.jpeg"),
-                          ),
-                        ),
-                      ),
-                      Container(height: height/15,width: width/6,
-                        child: Card(shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                          child: Image(
-                            image: AssetImage("assets/images/a1.jpeg"),
-                          ),
-                        ),
-                      ),
-                      Container(height: height/15,width: width/6,
-                        child: Card(shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                          child: Image(
-                            image: AssetImage("assets/images/a1.jpeg"),
-                          ),
-                        ),
-                      ),
-                      Container(height: height/15,width: width/6,
-                        child: Card(shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                          child: Image(
-                            image: AssetImage("assets/images/a1.jpeg"),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(height: height/2,width: width,
-                  child: Center(
-                    child: Stack(
-                      children: cardList,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: width/10,right: width/10),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('Name\nDist',style: TextStyle(fontSize: height/40,fontWeight: FontWeight.bold),),
-                      IconButton(
-                        icon: Icon(Icons.share,color: Colors.redAccent,),
-                        onPressed: (){},
-                      )
-                    ],
-
-                  ),
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.center,
+          body: ListView(
+            children: <Widget>[
+              Center(
+                child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Container(height: height/12,width: width/6,
-                      child: Card(shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
+                    Padding(
+                      padding:EdgeInsets.only(left: width/12,right: width/12),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(height: height/15,width: width/6,
+                            child: Card(shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                              child: Image(
+                                image: AssetImage("assets/images/a1.jpeg"),
+                              ),
+                            ),
+                          ),
+                          Container(height: height/15,width: width/6,
+                            child: Card(shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                              child: Image(
+                                image: AssetImage("assets/images/a1.jpeg"),
+                              ),
+                            ),
+                          ),
+                          Container(height: height/15,width: width/6,
+                            child: Card(shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                              child: Image(
+                                image: AssetImage("assets/images/a1.jpeg"),
+                              ),
+                            ),
+                          ),
+                          Container(height: height/15,width: width/6,
+                            child: Card(shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                              child: Image(
+                                image: AssetImage("assets/images/a1.jpeg"),
+                              ),
+                            ),
+                          ),
+                          Container(height: height/15,width: width/6,
+                            child: Card(shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                              child: Image(
+                                image: AssetImage("assets/images/a1.jpeg"),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                        child: Image(
-                          image: AssetImage("assets/images/rewind.png"),
+                    ),
+                    Container(height: height/2,width: width,
+                      child: Center(
+                        child: Stack(
+                          children: cardList,
+                          alignment: Alignment.topCenter,
                         ),
                       ),
-                    ), SizedBox(width: width/20,),
-                    Container(height: height/12,width: width/6,
-                      child: Card(shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: width/10,right: width/10),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text('Name\nDist',style: TextStyle(fontSize: height/40,fontWeight: FontWeight.bold),),
+                          IconButton(
+                            icon: Icon(Icons.share,color: Colors.redAccent,),
+                            onPressed: (){},
+                          )
+                        ],
+
                       ),
-                        child: Image(
-                          image: AssetImage("assets/images/chart.png"),
-                        ),
-                      ),
-                    ),SizedBox(width: width/20,),
-                    Container(height: height/12,width: width/6,
-                      child: Card(shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                        child: Image(
-                          image: AssetImage("assets/images/sat.png"),
-                        ),
-                      ),
-                    ),SizedBox(width: width/20,),
-                    Container(height: height/12,width: width/6,
-                      child: Card(shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                        child: Image(
-                          image: AssetImage("assets/images/trash.png"),
-                        ),
-                      ),
-                    ),SizedBox(width: width/20,),
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(height: height/12,width: width/6,
+                          child: Card(shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                            child: Image(
+                              image: AssetImage("assets/images/rewind.png"),
+                            ),
+                          ),
+                        ), SizedBox(width: width/20,),
+                        Container(height: height/12,width: width/6,
+                          child: Card(shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                            child: Image(
+                              image: AssetImage("assets/images/chart.png"),
+                            ),
+                          ),
+                        ),SizedBox(width: width/20,),
+                        Container(height: height/12,width: width/6,
+                          child: Card(shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                            child: Image(
+                              image: AssetImage("assets/images/sat.png"),
+                            ),
+                          ),
+                        ),SizedBox(width: width/20,),
+                        Container(height: height/12,width: width/6,
+                          child: Card(shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                            child: Image(
+                              image: AssetImage("assets/images/trash.png"),
+                            ),
+                          ),
+                        ),SizedBox(width: width/20,),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
+              )
+            ],
           )
-      ),
+      )
     );
   }
 
@@ -288,7 +292,29 @@ class _MyHomePageState extends State<MyHomePage> {
       {"title": "sea Food", "pic": "assets/images/a9.jpeg"},
       {"title": "Fast Foods", "pic": "assets/images/a11.jpeg"},
       {"title": "Shushi", "pic": "assets/images/a14.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica1.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica2.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica3.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica4.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica5.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica6.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica7.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica8.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica9.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica10.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica11.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica12.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica13.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica14.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica14.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/a18.jpeg1"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica18.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/a17.jpeg"},
       {"title": "GYM Freak Food", "pic": "assets/images/a15.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica16.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica18.jpeg"},
+      {"title": "GYM Freak Food", "pic": "assets/images/Amica19.jpeg"},
+
     ];
 
     List<MatchCard> cards = new List();
@@ -297,7 +323,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     List<Widget> cardList = new List();
 
-    for (int x = 0; x < 10; x++) {
+    for (int x = 0; x < data.length; x++) {
       cardList.add(Positioned(
           top: 40,
           child: Draggable(
@@ -310,7 +336,7 @@ class _MyHomePageState extends State<MyHomePage> {
               _removeCard(x);
             },
             childWhenDragging: Container(
-              child: Text("Abhi"),
+              child: Text("Swiped",style: TextStyle(fontFamily: "Poppins2",fontSize: 30,color: Colors.red),),
             ),
             feedback: Card(
               elevation: 0,

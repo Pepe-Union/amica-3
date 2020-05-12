@@ -17,7 +17,7 @@ class SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3),
-            () => {Navigator.pushNamed(context, LoginPage.id)});
+            () => {Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginPage();}), ModalRoute.withName('/'))});
   }
 
   @override

@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'main.dart';
 
 import 'views/SignUpScreen.dart';
+import 'views/SignUpScreen.dart';
 
 class OtpScreen extends StatefulWidget {
   static const String id = "otpscreen";
@@ -157,7 +158,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 elevation: 0,
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, Gender.id);
+                    Navigator.pushNamed(context, Imformation.id);
                   },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40)),
@@ -368,130 +369,134 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
+      body: ListView(
         children: <Widget>[
-          Column(
+          Stack(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(height/18),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: height/15, horizontal: width/13),
-                child: Image.asset('assets/images/logo.png'),
-              ),
-              SizedBox(
-                height: height/30,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: height/18),
-                child: Text(
-                  "By signing up,you agree with our teams of\n"
-                      " service and privacy policy.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
-                ),
-              ),
-              SizedBox(height: height/28,),
-              Material(
-                elevation: 0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(Login.id);
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40)),
-                  height: height/12,minWidth: width/1.3,
-                  child: Text(
-                    'Email address',
-                    style: TextStyle(
-                        fontFamily: "Poppins",
-                        color: Colors.white,
-                        fontSize: height/32),
+              Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(height/18),
                   ),
-                  splashColor: Colors.red,
-                  color: Colors.redAccent,
-                ),
-              ),
-              SizedBox(height: height/28,),
-              Material(
-                elevation: 0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Navigator.pushNamed(context, OtpScreen1.id);
-                  },
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: height/15, horizontal: width/13),
+                    child: Image.asset('assets/images/logo.png'),
                   ),
-                  height: height/12,minWidth: width/1.3,
-                  child: Text(
-                    'Phone number',
-                    style: TextStyle(
-                        fontFamily: "Poppins",
-                        color: Colors.white,
-                        fontSize: height/32),
+                  SizedBox(
+                    height: height/30,
                   ),
-                  splashColor: Colors.white,
-                  color: Colors.redAccent,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    FloatingActionButton(elevation: 0,
-                      backgroundColor: Colors.red,heroTag: "insta",
-                      child: Image.asset('assets/images/ig.png'),
-                      onPressed: () {},
-                    ),SizedBox(width: width/40,),
-                    FloatingActionButton(heroTag: "facebook",elevation: 0,
-                      backgroundColor: Colors.white,
-                      child: Image.asset(
-                          'assets/images/fb.png'),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: height/18),
+                    child: Text(
+                      "By signing up,you agree with our teams of\n"
+                          " service and privacy policy.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
+                    ),
+                  ),
+                  SizedBox(height: height/28,),
+                  Material(
+                    elevation: 0,
+                    child: MaterialButton(
                       onPressed: () {
-                        signUpWithFacebook().whenComplete(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Imformation();
-                              },
-                            ),
-                          );
-                        }
-                        )
-                        ;
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return Login();}), ModalRoute.withName('/'));
                       },
-                    ),SizedBox(width: width/40,),
-                    FloatingActionButton(heroTag: "google",elevation: 0,
-                      backgroundColor: Colors.white,
-                      child: Image.asset('assets/images/gg.png'),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40)),
+                      height: height/12,minWidth: width/1.3,
+                      child: Text(
+                        'Email address',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            color: Colors.white,
+                            fontSize: height/32),
+                      ),
+                      splashColor: Colors.red,
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                  SizedBox(height: height/28,),
+                  Material(
+                    elevation: 0,
+                    child: MaterialButton(
                       onPressed: () {
-                        signInWithGoogle().whenComplete(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Imformation();
-                              },
-                            ),
-                          );
-                        }
-                        )
-                        ;
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return OtpScreen();}), ModalRoute.withName('/'));
                       },
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-    padding: EdgeInsets.symmetric(vertical: height/50),
-    child: Text(
-    "We don't post anything to any platform",
-    textAlign: TextAlign.center,
-    style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
-    ),)
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      height: height/12,minWidth: width/1.3,
+                      child: Text(
+                        'Phone number',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            color: Colors.white,
+                            fontSize: height/32),
+                      ),
+                      splashColor: Colors.white,
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        FloatingActionButton(elevation: 0,
+                          backgroundColor: Colors.red,heroTag: "insta",
+                          child: Image.asset('assets/images/ig.png'),
+                          onPressed: () {},
+                        ),SizedBox(width: width/40,),
+                        FloatingActionButton(heroTag: "facebook",elevation: 0,
+                          backgroundColor: Colors.white,
+                          child: Image.asset(
+                              'assets/images/fb.png'),
+                          onPressed: () {
+                            signUpWithFacebook().whenComplete(() {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return Imformation();
+                                  },
+                                ),
+                              );
+                            }
+                            )
+                            ;
+                          },
+                        ),SizedBox(width: width/40,),
+                        FloatingActionButton(heroTag: "google",elevation: 0,
+                          backgroundColor: Colors.white,
+                          child: Image.asset('assets/images/gg.png'),
+                          onPressed: () {
+                            signInWithGoogle().whenComplete(() {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return Imformation();
+                                  },
+                                ),
+                              );
+                            }
+                            )
+                            ;
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: height/50),
+                    child: Text(
+                      "We don't post anything to any platform",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(letterSpacing: 0, fontFamily: 'Poppins1'),
+                    ),)
+                ],
+              )
             ],
-          )
+          ),
         ],
       ),
     );

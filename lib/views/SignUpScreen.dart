@@ -210,99 +210,103 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          SizedBox(
-            height: 40.0,
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top: 40,
+    body: ListView(
+      children: <Widget>[
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            SizedBox(
+              height: 40.0,
             ),
-            child: Text(
-              "Log In With email address",
-              style: TextStyle(
-                letterSpacing: 2,
-                fontFamily: 'Poppins',
-                fontSize: 30,
+            Padding(
+              padding: EdgeInsets.only(
+                top: 40,
+              ),
+              child: Text(
+                "Log In With email address",
+                style: TextStyle(
+                  letterSpacing: 2,
+                  fontFamily: 'Poppins',
+                  fontSize: 30,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            child: Text(
-              "Email Address",
-              style: TextStyle(
-                  letterSpacing: 0,
-                  fontFamily: 'Poppins1',
-                  color: Colors.black),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              keyboardType: TextInputType.emailAddress,
-              onChanged: (value) => email = value,
-              decoration: InputDecoration(
-                hintText: 'abc@email.com',
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              child: Text(
+                "Email Address",
+                style: TextStyle(
+                    letterSpacing: 0,
+                    fontFamily: 'Poppins1',
+                    color: Colors.black),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Text(
-              "Password",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  letterSpacing: 0,
-                  fontFamily: 'Poppins1',
-                  color: Colors.black),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              autocorrect: false,
-              obscureText: true,
-              onChanged: (value) => password = value,
-              decoration: InputDecoration(
-                hintText: "Password",
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (value) => email = value,
+                decoration: InputDecoration(
+                  hintText: 'abc@email.com',
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              "Forgot Password",
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                  letterSpacing: 0,
-                  fontFamily: 'Poppins1',
-                  color: Colors.black,
-                  fontSize: 15),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Text(
+                "Password",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    letterSpacing: 0,
+                    fontFamily: 'Poppins1',
+                    color: Colors.black),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: CustomButton(
-              text: "Log In",
-              callback: () async {
-                await loginUser();
-              },
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                autocorrect: false,
+                obscureText: true,
+                onChanged: (value) => password = value,
+                decoration: InputDecoration(
+                  hintText: "Password",
+                ),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: CustomButton(
-              text: "Sign Up",
-              callback: () {
-                Navigator.of(context).pushNamed(Registration.id);
-              },
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                "Forgot Password",
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                    letterSpacing: 0,
+                    fontFamily: 'Poppins1',
+                    color: Colors.black,
+                    fontSize: 15),
+              ),
             ),
-          )
-        ],
-      ),
+            Padding(
+              padding: EdgeInsets.only(top: 40),
+              child: CustomButton(
+                text: "Log In",
+                callback: () async {
+                  await loginUser();
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 40),
+              child: CustomButton(
+                text: "Sign Up",
+                callback: () {
+                  Navigator.of(context).pushNamed(Registration.id);
+                },
+              ),
+            )
+          ],
+        ),
+      ],
+    )
     );
   }
 }
@@ -322,144 +326,149 @@ class _GenderState extends State<Gender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                top: 100,right: 100
+    body: ListView(
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            SizedBox(
+              height: 25,
             ),
-            child: Text(
-              "Gender Details",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0,
-                fontFamily: 'Poppins',
-                fontSize: 30,
+            Padding(
+              padding: EdgeInsets.only(
+                  top: 100,right: 100
+              ),
+              child: Text(
+                "Gender Details",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0,
+                  fontFamily: 'Poppins',
+                  fontSize: 30,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10,right: 250),
-            child: Text(
-              "Your Gender",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
+            Padding(
+              padding: EdgeInsets.only(top: 10,right: 250),
+              child: Text(
+                "Your Gender",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
+              ),
             ),
-          ),
-          Padding(padding: EdgeInsets.only(top:10),
-            child: Center(
-              child: Container(
-                width: 375,
-                child: Card(
-                  color: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Center(
-                    child: DropdownButton<String>(iconEnabledColor: Colors.white,
-                        isExpanded: true,
-                        items: gender.map((String drop) {
-                          return DropdownMenuItem<String>(
-                            value: drop,
-                            child: Text("  $drop",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontFamily: 'Poppins2',
-                                  color: Colors.black),
-                            ),
-                          );
-                        }).toList(),
-                        value: Gender.currentItem1,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            Gender.currentItem1 = newValue;
+            Padding(padding: EdgeInsets.only(top:10),
+              child: Center(
+                child: Container(
+                  width: 375,
+                  child: Card(
+                    color: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Center(
+                      child: DropdownButton<String>(iconEnabledColor: Colors.white,
+                          isExpanded: true,
+                          items: gender.map((String drop) {
+                            return DropdownMenuItem<String>(
+                              value: drop,
+                              child: Text("  $drop",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: 'Poppins2',
+                                    color: Colors.black),
+                              ),
+                            );
+                          }).toList(),
+                          value: Gender.currentItem1,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              Gender.currentItem1 = newValue;
 
-                          });
-                        }),
+                            });
+                          }),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 40,right: 250),
-            child: Text(
-              "Intrested in",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
+            Padding(
+              padding: EdgeInsets.only(top: 40,right: 250),
+              child: Text(
+                "Intrested in",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    letterSpacing: 0, fontFamily: 'Poppins', color: Colors.grey[700]),
+              ),
             ),
-          ),
-          Padding(padding: EdgeInsets.only(top:10),
-            child: Center(
-              child: Container(
-                width: 375,
-                child: Card(
-                  color: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Center(
-                    child: DropdownButton<String>(iconEnabledColor: Colors.white,
-                        isExpanded: true,
-                        items: gender.map((String drop) {
-                          return DropdownMenuItem<String>(
-                            value: drop,
-                            child: Text("  $drop",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontFamily: 'Poppins2',
-                                  color: Colors.black),
-                            ),
-                          );
-                        }).toList(),
-                        value: Gender.currentItem,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            Gender.currentItem= newValue;
+            Padding(padding: EdgeInsets.only(top:10),
+              child: Center(
+                child: Container(
+                  width: 375,
+                  child: Card(
+                    color: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Center(
+                      child: DropdownButton<String>(iconEnabledColor: Colors.white,
+                          isExpanded: true,
+                          items: gender.map((String drop) {
+                            return DropdownMenuItem<String>(
+                              value: drop,
+                              child: Text("  $drop",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: 'Poppins2',
+                                    color: Colors.black),
+                              ),
+                            );
+                          }).toList(),
+                          value: Gender.currentItem,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              Gender.currentItem= newValue;
 
-                          });
-                        }),
+                            });
+                          }),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: Material(
-              elevation: 0,
-              child: MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return FacePage();}), ModalRoute.withName('/'));
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40),
+            SizedBox(
+              height: 100,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Material(
+                elevation: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return FacePage();}), ModalRoute.withName('/'));
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  height: 55.0,
+                  minWidth: 320,
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                        fontFamily: "Poppins", color: Colors.white, fontSize: 20),
+                  ),
+                  splashColor: Colors.white,
+                  color: Colors.redAccent,
                 ),
-                height: 55.0,
-                minWidth: 320,
-                child: Text(
-                  'Continue',
-                  style: TextStyle(
-                      fontFamily: "Poppins", color: Colors.white, fontSize: 20),
-                ),
-                splashColor: Colors.white,
-                color: Colors.redAccent,
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      ],
+    )
     );
   }
 }
 class Imformation extends StatefulWidget {
+  static final String id="ufo";
   @override
   _ImformationState createState() => _ImformationState();
 }
@@ -514,153 +523,154 @@ class _ImformationState extends State<Imformation> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: SafeArea(
-        child:Padding(
-          padding: EdgeInsets.all(height/30),
-          child: Column(
-            children: <Widget>[
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "Profile details",
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: height/25,
-                  ),
-                ),
-              ),
-              SizedBox(height: height/30,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "Email Address",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-              data: new ThemeData(
-                primaryColor: Colors.redAccent,),
-                child: TextField(
-                keyboardType: TextInputType.emailAddress,
-                onChanged: (value) => email = value,
-                decoration: InputDecoration(
-                  hintText: 'abc@email.com',
-                ),
-              ),),SizedBox(height: height/40,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "Full name",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-                data: new ThemeData(
-                  primaryColor: Colors.redAccent,),
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  onChanged: (value) => name = value,
-
-                ),),SizedBox(height: height/40,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "Birthday",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-                data: new ThemeData(
-                  primaryColor: Colors.redAccent,),
-                child: TextField(
-                  keyboardType: TextInputType.datetime,
-                  onChanged: (value) =>  dob= value,
-                  decoration: InputDecoration(
-                    hintText: 'dd/mm/yyyy',
-                  ),
-                ),),SizedBox(height: height/40,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "City",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-                data: new ThemeData(
-                  primaryColor: Colors.redAccent,),
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  onChanged: (value) =>  city= value,
-
-                ),),SizedBox(height: height/40,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "State",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-                data: new ThemeData(
-                  primaryColor: Colors.redAccent,),
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  onChanged: (value) => state = value,
-                ),),SizedBox(height: height/40,),
-              Align(alignment: Alignment.centerLeft,
-                child: Text(
-                  "Country",
-                  style: TextStyle(
-                      letterSpacing: 0,
-                      fontFamily: 'Poppins1',
-                      color: Colors.grey[700]),
-                ),
-              ),
-              Theme(
-                data: new ThemeData(
-                  primaryColor: Colors.redAccent,),
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  onChanged: (value) => country = value,
-                ),),SizedBox(height: height/40,),
-              Material(
-                elevation: 0,
-                child: MaterialButton(
-                  onPressed: () {
-
-                    Navigator.pushNamed(context, Gender.id);
-                  },
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  height: 55.0,
-                  minWidth: 320,
+    body: ListView(
+      children: <Widget>[
+        SafeArea(
+          child:Padding(
+            padding: EdgeInsets.all(height/30),
+            child: Column(
+              children: <Widget>[
+                Align(alignment: Alignment.centerLeft,
                   child: Text(
-                    'Continue',
+                    "Profile details",
                     style: TextStyle(
-                        fontFamily: "Poppins", color: Colors.white, fontSize: 20),
+                      fontFamily: 'Poppins',
+                      fontSize: height/25,
+                    ),
                   ),
-                  splashColor: Colors.white,
-                  color: Colors.redAccent,
                 ),
-              ),
+                SizedBox(height: height/30,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Email Address",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    onChanged: (value) => email = value,
+                    decoration: InputDecoration(
+                      hintText: 'abc@email.com',
+                    ),
+                  ),),SizedBox(height: height/40,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Full name",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    onChanged: (value) => name = value,
 
+                  ),),SizedBox(height: height/40,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Birthday",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.datetime,
+                    onChanged: (value) =>  dob= value,
+                    decoration: InputDecoration(
+                      hintText: 'dd/mm/yyyy',
+                    ),
+                  ),),SizedBox(height: height/40,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "City",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    onChanged: (value) =>  city= value,
 
+                  ),),SizedBox(height: height/40,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "State",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    onChanged: (value) => state = value,
+                  ),),SizedBox(height: height/40,),
+                Align(alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Country",
+                    style: TextStyle(
+                        letterSpacing: 0,
+                        fontFamily: 'Poppins1',
+                        color: Colors.grey[700]),
+                  ),
+                ),
+                Theme(
+                  data: new ThemeData(
+                    primaryColor: Colors.redAccent,),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    onChanged: (value) => country = value,
+                  ),),SizedBox(height: height/40,),
+                Material(
+                  elevation: 0,
+                  child: MaterialButton(
+                    onPressed: () {
 
-            ],
+                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return Gender();}), ModalRoute.withName('/'));
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    height: 55.0,
+                    minWidth: 320,
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(
+                          fontFamily: "Poppins", color: Colors.white, fontSize: 20),
+                    ),
+                    splashColor: Colors.white,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
+      ],
+    )
     );
   }
 

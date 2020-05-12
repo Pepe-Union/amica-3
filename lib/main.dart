@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'FirebaseAuth.dart';
 import 'ImagePicker.dart';
 import 'inbox.dart';
+import 'views/SignUpScreen.dart';
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,10 +25,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.redAccent
       ),
-      home:  Upload(),
+      home:  SplashScreen(),
       routes: {
         Registration.id: (context) => Registration(),
-        Login.id: (context) => Login(),
+        Login.id: (context) => Login(),Imformation.id: (context) => Imformation(),
         Chat.id: (context) => Chat(),
         Gender.id:(context)=>Gender(),
         SplashScreen.id: (context) => SplashScreen(),
