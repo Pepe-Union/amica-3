@@ -59,7 +59,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
     
-  assets: 
+  assets:
     - assets/images/AmicaLogo.png
     - assets/images/flashscreen.png
     - assets/images/facebook-hd-png-facebook-png-hd-png-image-2023.png
@@ -82,6 +82,36 @@ flutter:
     - assets/images/a18.jpeg
     - assets/images/a21.jpeg
     - assets/images/a22.jpeg
+    - assets/images/fb.png
+    - assets/images/gg.png
+    - assets/images/ig.png
+    - assets/images/mic.png
+    - assets/images/tick.png
+    - assets/images/cam.png
+    - assets/images/cam1.png
+    - assets/images/chart.png
+    - assets/images/chat0.png
+    - assets/images/music.png
+    - assets/images/rewind.png
+    - assets/images/sat.png
+    - assets/images/trash.png
+    - assets/images/Amica1.jpeg
+    - assets/images/Amica2.jpeg
+    - assets/images/Amica3.jpeg
+    - assets/images/Amica4.jpeg
+    - assets/images/Amica5.jpg
+    - assets/images/Amica6.jpeg
+    - assets/images/Amica7.jpeg
+    - assets/images/Amica8.jpeg
+    - assets/images/Amica9.jpeg
+    - assets/images/Amica10.jpeg
+    - assets/images/Amica11.jpeg
+    - assets/images/Amica13.jpeg
+    - assets/images/Amica14.jpeg
+    - assets/images/Amica16.jpeg
+    - assets/images/Amica18.jpeg
+    - assets/images/Amica19.jpeg
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
